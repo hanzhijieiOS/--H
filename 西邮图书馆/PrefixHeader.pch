@@ -1,0 +1,37 @@
+//
+//  PrefixHeader.pch
+//  西邮图书馆
+//
+//  Created by Jay on 2017/1/27.
+//  Copyright © 2017年 韩智杰. All rights reserved.
+//
+
+//#ifndef PrefixHeader_pch
+//#define PrefixHeader_pch
+
+#import <Availability.h>
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
+  #ifndef __IPHONE_6_0
+    #warning "This project uses features only available in iPhone SDK 6.0 and later."
+  #endif
+
+  #ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <SystemConfiguration/SystemConfiguration.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
+  #endif
+#else
+  #ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import <SystemConfiguration/SystemConfiguration.h>
+    #import <AssertMacros.h>
+    #import <CoreServices/CoreServices.h>
+  #endif
+#endif
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//#endif /* PrefixHeader_pch */
