@@ -155,6 +155,7 @@
     }else{
         if ([path hasSuffix:@".png"] || [path hasSuffix:@".jpg"] || [path hasSuffix:@".jpeg"]) {
             NSLog(@"*************->>%@",path);
+            NSLog(@"王德法小朋友");
         }
         decisionHandler(WKNavigationActionPolicyAllow);
     }
