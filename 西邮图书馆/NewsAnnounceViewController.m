@@ -154,7 +154,7 @@
         decisionHandler(WKNavigationActionPolicyAllow);
     }else{
         if ([path hasSuffix:@".png"] || [path hasSuffix:@".jpg"] || [path hasSuffix:@".jpeg"]) {
-            NSLog(@"*************->>%@",path);
+            NSLog(@"The picture URL is %@",path);
         }
         decisionHandler(WKNavigationActionPolicyAllow);
     }
