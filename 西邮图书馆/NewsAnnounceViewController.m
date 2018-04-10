@@ -155,8 +155,15 @@
     }else{
         if ([path hasSuffix:@".png"] || [path hasSuffix:@".jpg"] || [path hasSuffix:@".jpeg"]) {
             NSLog(@"The picture URL is %@",path);
+            UIViewController * controller = [[UIViewController alloc] init];
+            UIImageView * imageView = [[UIImageView alloc] initWithFrame:controller.view.bounds];
+            [controller.view addSubview:imageView];
+            NSString *docPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"badge"];
+            NSString *localPath = [docPath stringByAppendingPathComponent:[self md5:path]];
+            imageView.image = [UIImage imageWithContentsOfFile:localPath];
+            [self.navigationController pushViewController:controller animated:YES];
         }
-        decisionHandler(WKNavigationActionPolicyAllow);
+        decisionHandler(WKNavigationActionPolicyCancel);
     }
 }
 
